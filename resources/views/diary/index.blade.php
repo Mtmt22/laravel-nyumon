@@ -13,9 +13,16 @@
 @foreach($diaries as $diary)
 <div>
   <div>{{ $diary->date }}</div>
-  <div>{{ $diary->title }}</div>
+  <div>
+    <a href="{{ route('diary.show', $diary) }}">{{ $diary->title }}</a>
+  </div>
+  <!-- <div>{{ $diary->title }}</div> -->
 </div>
 @endforeach
+<!-- メッセージの表示 -->
+@if (session('message'))
+  <p style="color: green;">{{ session('message') }}</p>
+@endif
 
 </body>
 </html>

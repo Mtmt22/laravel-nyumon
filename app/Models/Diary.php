@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Diary extends Model
 {
   use HasFactory;
+  // セキュリティのため、これらのフィールドだけは代入OK
+  protected $fillable = ['title', 'body'];
 }
